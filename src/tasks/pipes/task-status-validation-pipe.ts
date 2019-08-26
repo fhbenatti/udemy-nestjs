@@ -3,7 +3,7 @@ import {
   ArgumentMetadata,
   BadRequestException,
 } from '@nestjs/common';
-import { TaskStatus } from '../tasks.model';
+import { TaskStatus } from '../tasks-status.enum';
 import { TasksController } from '../tasks.controller';
 
 export class TaskStatusValidationPipe implements PipeTransform {
