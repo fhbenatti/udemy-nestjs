@@ -5,7 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserRepository } from './user.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
-import { JwtStrategy } from './auth.strategy';
+import { JwtStrategy } from './jwt.strategy';
 import * as config from 'config';
 
 const jwtConfig = config.get('jwt');
