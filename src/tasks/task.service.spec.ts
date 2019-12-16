@@ -35,7 +35,8 @@ describe('TaskService', () => {
 
   describe('getTasks', () => {
     it('gets all tasks from the repository', async () => {
-      taskRepository.getTasks.mockResolvedValue('someValue');
+      // taskRepository.getTasks.mockResolvedValue('someValue');
+      jest.spyOn(taskRepository, 'getTasks').mockResolvedValue('someValue');
 
       expect(taskRepository.getTasks).not.toHaveBeenCalled();
       const filters: GetTasksFilterDto = {
@@ -43,7 +44,6 @@ describe('TaskService', () => {
         search: 'Some search query',
       };
       const result = await tasksService.getTasks(filters, mockUser);
-      tasksService.getTasks(filters, mockUser);
       expect(taskRepository.getTasks).toHaveBeenCalled();
       expect(result).toEqual('someValue');
     });
